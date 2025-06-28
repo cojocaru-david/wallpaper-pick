@@ -11,7 +11,6 @@ export const MainMenusGradientCard = ({
   circleSize = 400,
   className,
   children,
-  size = "md",
 }: {
   title: string;
   description?: string;
@@ -19,7 +18,6 @@ export const MainMenusGradientCard = ({
   circleSize?: number;
   children?: ReactNode;
   className?: string;
-  size?: "sm" | "md" | "lg";
 }) => {
   const [mouse, parentRef] = useMouse();
 

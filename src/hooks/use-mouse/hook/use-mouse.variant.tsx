@@ -1,6 +1,6 @@
 "use client";
 
-import { useMouse } from "@/cuicui/hooks/use-mouse";
+import { useMouse } from "@/hooks/use-mouse";
 
 export default function PreviewUseMouse() {
   const [mouse, parentRef] = useMouse();

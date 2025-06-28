@@ -1,5 +1,12 @@
-import { MousePointer2Icon } from "lucide-react";
-import type { CategoryMetaType } from "@/lib/types/component";
+import { MousePointer2Icon, type LucideIcon } from "lucide-react";
+
+export type CategoryMetaType = {
+  name: string;
+  description: string;
+  latestUpdateDate: Date;
+  icon: LucideIcon;
+  isComingSoon?: boolean;
+};
 
 export const useMouseCategory: CategoryMetaType = {
   name: "Use Mouse",

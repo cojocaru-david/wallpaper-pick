@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const wallpapers = Array.from({ length: 12 }).map((_, i) => ({
   id: i + 1,
@@ -57,7 +58,7 @@ export default function ExplorePage() {
             className="group relative cursor-pointer rounded-xl overflow-hidden shadow bg-card hover:scale-105 transition-transform"
             onClick={() => setModal(w)}
           >
-            <img src={w.image} alt={w.name} className="w-full h-40 object-cover" />
+            <Image src={w.image} alt={w.name} className="w-full h-40 object-cover" width={100} height={100} />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2 text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity">
               {w.name}
             </div>
@@ -75,7 +76,7 @@ export default function ExplorePage() {
             >
               ×
             </button>
-            <img src={modal.image} alt={modal.name} className="w-full h-48 object-cover rounded-lg mb-4" />
+            <Image src={modal.image} alt={modal.name} className="w-full h-48 object-cover rounded-lg mb-4" width={100} height={100} />
             <h2 className="text-2xl font-bold mb-2">{modal.name}</h2>
             <div className="text-muted-foreground mb-4">Downloads: 0</div>
             <Button className="w-full">Download</Button>
