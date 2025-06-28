@@ -1,103 +1,54 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="flex flex-col items-center ">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center w-full px-4 py-24 md:py-32 text-center gap-6">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 font-syne">
+          Wallpaper Pick
+        </h1>
+        <p className="max-w-xl mx-auto text-lg md:text-2xl text-muted-foreground mb-6">
+          Discover, preview, and download stunning high-quality wallpapers for your desktop and mobile. Curated collections, trending backgrounds, and easy downloads.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button asChild size="lg">
+            <a href="/explore">Explore Wallpapers</a>
+          </Button>
+          <Button asChild variant="outline" size="lg">
+            <a href="#features">Learn More</a>
+          </Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+      {/* One Page Scroll Info Blocks */}
+      <section id="features" className="w-full flex flex-col items-center gap-16 py-16 px-4 max-w-5xl">
+        <div className="grid md:grid-cols-3 gap-8 w-full">
+          <div className="bg-card rounded-xl shadow p-6 flex flex-col items-center">
+            <h2 className="text-xl font-semibold mb-2">Curated Collections</h2>
+            <p className="text-muted-foreground">Handpicked wallpapers for every taste and device, updated regularly.</p>
+          </div>
+          <div className="bg-card rounded-xl shadow p-6 flex flex-col items-center">
+            <h2 className="text-xl font-semibold mb-2">Easy Downloads</h2>
+            <p className="text-muted-foreground">Download wallpapers in one click, optimized for desktop and mobile.</p>
+          </div>
+          <div className="bg-card rounded-xl shadow p-6 flex flex-col items-center">
+            <h2 className="text-xl font-semibold mb-2">Trending & New</h2>
+            <p className="text-muted-foreground">Stay ahead with trending backgrounds and discover new favorites daily.</p>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8 w-full">
+          <div className="bg-card rounded-xl shadow p-6 flex flex-col items-center">
+            <h2 className="text-xl font-semibold mb-2">Super Clean UI</h2>
+            <p className="text-muted-foreground">Enjoy a distraction-free, modern, and responsive browsing experience.</p>
+          </div>
+          <div className="bg-card rounded-xl shadow p-6 flex flex-col items-center">
+            <h2 className="text-xl font-semibold mb-2">Dark Mode</h2>
+            <p className="text-muted-foreground">Switch between light and dark themes for comfortable viewing anytime.</p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
