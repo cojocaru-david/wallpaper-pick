@@ -192,3 +192,38 @@
     transform: rotate(0deg);
   }
 }
+
+html, body, main {
+  height: 100%;
+  width: 100vw;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Additional responsive improvements */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .overflow-hidden {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* Ensure proper touch targets on mobile */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
